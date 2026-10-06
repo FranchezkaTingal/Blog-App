@@ -1,52 +1,16 @@
 <x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
+    <div style="margin-bottom:1.75rem;">
+        <div class="eyebrow">Join the circle</div>
+        <h1 class="serif" style="font-size:2.25rem;line-height:1.1;margin:.35rem 0 .5rem;">Bring your point of view.</h1>
+        <p class="muted" style="margin:0;font-size:.92rem;">A thoughtful place for curious people and good stories.</p>
+    </div>
+    <form method="POST" action="{{ route('register') }}" style="display:grid;gap:1rem;">
         @csrf
-
-        <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
-        </div>
-
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
-
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
-
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
-
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
-
-            <x-primary-button class="ms-4">
-                {{ __('Register') }}
-            </x-primary-button>
-        </div>
+        <div class="field"><label for="name">Your name</label><input id="name" type="text" name="name" value="{{ old('name') }}" required autofocus autocomplete="name" placeholder="Alex Morgan"><x-input-error :messages="$errors->get('name')" class="field-error" /></div>
+        <div class="field"><label for="email">Email address</label><input id="email" type="email" name="email" value="{{ old('email') }}" required autocomplete="username" placeholder="you@example.com"><x-input-error :messages="$errors->get('email')" class="field-error" /></div>
+        <div class="field"><label for="password">Password</label><input id="password" type="password" name="password" required autocomplete="new-password" placeholder="At least 8 characters"><x-input-error :messages="$errors->get('password')" class="field-error" /></div>
+        <div class="field"><label for="password_confirmation">Confirm password</label><input id="password_confirmation" type="password" name="password_confirmation" required autocomplete="new-password"><x-input-error :messages="$errors->get('password_confirmation')" class="field-error" /></div>
+        <button class="btn btn-primary" type="submit" style="width:100%;margin-top:.25rem;">Create my account</button>
     </form>
+    <p class="muted" style="text-align:center;font-size:.85rem;margin:1.35rem 0 0;">Already a member? <a href="{{ route('login') }}" style="color:var(--coral-dark);font-weight:700;">Log in</a></p>
 </x-guest-layout>

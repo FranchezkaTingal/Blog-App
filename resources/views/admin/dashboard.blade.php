@@ -322,6 +322,42 @@
                 justify-items: start;
             }
         }
+
+        /* Admin uses the same editorial system as the reader experience. */
+        .admin-shell {
+            min-height: calc(100vh - 4rem);
+            padding: 2rem 0 4rem;
+            background:
+                radial-gradient(circle at 8% 0%, rgba(231, 111, 81, .08), transparent 28rem),
+                radial-gradient(circle at 95% 12%, rgba(148, 166, 132, .12), transparent 24rem),
+                var(--paper);
+            color: var(--ink);
+        }
+        .admin-grid { width: min(1160px, calc(100% - 2.5rem)); grid-template-columns: 230px 1fr; gap: 1.25rem; }
+        .glass, .section-card { border: 1px solid var(--line); border-radius: 22px; background: rgba(255,253,250,.82); box-shadow: var(--shadow); backdrop-filter: blur(12px); }
+        .sidebar { padding: 1rem; top: 96px; }
+        .sidebar-title { color: var(--ink); font: 700 1.35rem 'Playfair Display', Georgia, serif; margin-bottom: 1.25rem; }
+        .sidebar-link { color: var(--muted); margin-bottom: .25rem; padding: .7rem .8rem; }
+        .sidebar-link:hover, .sidebar-link.active { color: var(--coral-dark); background: #fff0eb; }
+        .section-card { padding: 1.35rem; }
+        .section-title { color: var(--ink); font: 700 2rem 'Playfair Display', Georgia, serif; letter-spacing: -.03em; }
+        .muted, .stat-label, .post-meta-sub, .activity-time { color: var(--muted); }
+        .stat-card, .activity-item, .post-row { border: 1px solid var(--line); border-radius: 15px; background: #fff; }
+        .stat-card { padding: 1rem; }
+        .stat-value { color: var(--ink); font: 700 2rem 'Playfair Display', Georgia, serif; }
+        .activity-item { padding: .85rem; }
+        .activity-message, .post-meta-title { color: var(--ink); }
+        .post-row { padding: .8rem; }
+        .role-pill { background: #edf5eb; color: #4f704b; }
+        .role-pill.banned { background: #fff0eb; color: var(--coral-dark); }
+        .admin-table th, .admin-table td { color: var(--ink); border-color: var(--line); }
+        .btn { border-radius: 999px; border-color: var(--line); color: var(--ink); background: #fff; }
+        .btn:hover { background: #fff0eb; }
+        .btn-danger { border-color: #efc6bf; color: var(--coral-dark); background: #fff4f1; }
+        .modal { background: rgba(23, 32, 42, .48); }
+        .modal-card { border: 1px solid var(--line); border-radius: 20px; background: var(--surface); color: var(--ink); box-shadow: 0 24px 70px rgba(37,44,47,.18); }
+        #pdm-title, #delete-post-modal h4 { color: var(--ink) !important; font-family: 'Playfair Display', Georgia, serif; }
+        #pdm-body { color: var(--muted) !important; }
     </style>
 
     <div class="admin-shell">

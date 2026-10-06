@@ -1,11 +1,4 @@
-import React from "react";
-import { createRoot } from "react-dom/client";
+import Alpine from 'alpinejs';
 
-import Dashboard from "./components/Dashboard";
-
-const element = document.getElementById("dashboard");
-
-if (element) {
-    const root = createRoot(element);
-    root.render(<Dashboard />);
-}
+window.Alpine = Alpine;
+Alpine.start();

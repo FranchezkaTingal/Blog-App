@@ -19,10 +19,6 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    if (auth()->user()?->role === 'admin') {
-        return redirect()->route('admin.dashboard');
-    }
-
     $posts = Post::with('user')->latest()->get();
 
     return view('dashboard', compact('posts'));
